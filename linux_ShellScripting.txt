@@ -1,0 +1,169 @@
+------------------------------------------- LINUX -------------------------------------------
+
+Free OS, Secure, contains many distributions, fast.
+
+Kernel:    CPU | RAM | I/O
+    1. Device management
+    2. Memory management
+    3. Process management
+    4. Handling system calls
+
+Linux Commands : 
+
+pwd -> present working directory
+ls -> list of all files and folders in present working directory
+cd -> change directory
+cd .. -> go to previous directory
+ls -ltr -> list all the files and folders in present working directory along with their name, size, permissions, timestamp when it is created.
+touch <filename> -> creates a file with given file name.
+vi <filename> -> creates(if not present) and opens a file with given file name.
+cat <filename> - >displays all the content present in the file mentioned.
+nproc -> gives number of CPU's in the instance.
+free -> gives disk space used and available.
+df -> prints the disk space.
+man <Command_name> -> gives the manual/guide for the mentioned Command.
+top -> used to manage the memory, CPU or look into the details.
+
+
+------------------------------------------- Shell Scripting -------------------------------------------
+
+#!/bin/?  -> Starting line of every shell script
+
+? - bash/dash/sh/ksh
+But mostly we use "bash".
+
+So, 1st line in every shell script is "#!/bin/bash".
+
+
+Steps to create and run the shell scripts : 
+
+    1. vi helloWorld.sh -> creates and opens helloWorld.sh file
+    2. press "esc" and then "i" to enter into insert mode to write script in the file.
+    3. Write the code. For example
+        #!/bin/bash
+        echo "Hello World"
+*** 4. Now, to save the script and exit from the file, we have to press "esc" and then ":wq!".
+    5. To execute the helloWorld.sh file we have 2 methods.
+        a. sh helloWorld.sh
+        b. ./helloWorld.sh
+
+
+chmod -> command used to grant permissions to files.
+
+"chmod abc <fileName>"
+
+a -> user   |   b -> group   |  c -> other users.
+
+4 - to grant "Read" permissions
+2 - to grant "Write" permissions
+1 - to grant "Execute" permissions.
+
+
+Example: 
+
+chmod 777 helloWorld.sh -> command to grant all read, write and execute permissions to user, group and other users.
+
+More commands:
+
+history -> gives history of all commands that you used in past.
+mkdir <folderName> -> used to create a folder with given name in present working directory.
+
+
+
+Imp commands used in shell scripting : 
+
+
+1. set -x   ->  debug mode  -> gives which output belongs to which command.
+
+2. grep and awk
+
+    lets take a script.sh file which contains content as below
+
+        My name is Sai
+        I am from Anantapur
+    
+    grep name script.sh -> this command gives the lines in script.sh which contains the word "name" in it.
+                        ->  output : My name is Sai
+
+    grep name script.sh | awk -F" " '{print : $4}' -> first, from grep command, we get "My name is Sai." as output.
+                                                   -> from that output, using "awk" command we will 4th value as output.
+                                                   -> -F" " -> in double quotes, we have to specify the field seperator.
+                                                            -> this will give 4 values(My, name, is, Sai)
+                                                   -> {print : $4} -> prints the 4th value as output.
+                                                   -> Output : Sai
+
+
+3. When you are using '|' in script, it is best to insluce the below commands at Startingof the script.
+
+    a. set -e            ->  used to exit the script when there is error. But the drawback is, it won't catch pipefailures.
+    b. set -0 pipefail   ->  used to catch pipefailures.
+
+4. wget <url to file location>   ->  when the file is in cloud(like s3 bucket or blob storage or etc), it will "download" the content in the url as a log file(.log format) into the present working directory.
+
+5. curl <url to file location>   -> when the file is in cloud(like s3 bucket or blob storage or etc), we use this command to "display" the content in the file using the url given.
+
+6. find
+
+    -> To get into the root user directory, we use "sudo su -" command. sudo means "Substitute User Do" and su means "Switch User".
+    -> If we want to search a file(we don't know where it is), we first have to got he root user directory and run the below command.
+            find / -name <fileName>
+                where "/" means "search from all"
+    -> We can use below command to find a file from present working directory
+            sudo find / -name <fileName>
+
+
+
+
+-> If-else and for loop in Shell scripting :
+
+    syntax:  
+
+                    if [expression]
+                    then
+                        <Do this>
+                    else
+                        <Do this>
+                    fi
+
+    example:
+
+        a=10
+        b=20
+
+        if [a -gt b]
+        then
+            echo "a is greater than b"
+        else
+            echo "b is greater than a"
+        fi
+
+
+    syntax:
+
+                for i in {1.100};do echo $1;done
+
+
+-> Trap command: 
+
+    used to trap signal in Linux.
+
+    syntax: trap <prompt to display> <signal_name>
+
+    Example: trap "Do not use ctrl+c" SIGINT
+
+            SIGINT -> signal interept.
+
+            To know about various signal names, explore in internet.
+
+
+-> To parse the json file that is displayed in output, we have to use "jq" command. 
+   To parse the json file that is displayed in output, we have to use "yq" command.
+
+   Example : 
+        aws e2 describe-instances | jq '.Response[].Instances[].InstanseId'
+
+
+
+
+
+
