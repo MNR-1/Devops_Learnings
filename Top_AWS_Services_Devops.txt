@@ -1,0 +1,45 @@
+------------------------ Top 15 AWS services for Devops engineers ------------------------
+
+1. EC2 -> Elastic Compute Cloud
+       -> Live projects
+
+2. VPc -> Virtual Private Cloud
+       -> Private
+       -> To secure AWS instances
+
+3. EBS -> volume services
+
+4. S3 -> Simple Storage Service
+
+5. IAM -> Identity & Access Management
+       -> To grant permissions to policies/services.
+
+6. Cloud Watch -> for monitoring & observability
+               -> moniters every action in AWS
+
+7. LAMDA -> serverless
+
+8. Cloud Build -> For CI/CD pipelines in AWS -> a. AWS code pipeline
+                                                b. AWS code Build
+                                                c. AWS code deploy
+
+9. AWS configuration service
+
+10. Billing & costing
+
+11. AWS KMS -> Key Management Service
+            -> To maintain certifications
+
+12. Cloud Trail -> used to enable your operations at risk auditing
+                -> records all API activities
+                -> preserve logs for specific duration
+
+13. AWS EKS -> Elastic Kubernetes Service
+
+14. Fargate  ,  ECS -> Elastic Container Service
+
+15. ELK -> Elastic Search
+
+
+Difference between EKS and ECS   ->   ECS = Simpler, AWS-native, cost-effective for AWS-only workloads.
+                                      EKS = More powerful, flexible, and portable—but requires Kubernetes expertise.
