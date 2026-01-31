@@ -1,0 +1,35 @@
+------------------------ configuration Management ------------------------
+
+It's aim is to solve the problem of "managing the configuration of multiple servers".
+
+Some of the popular tools in this configuration Management field are Puppet, Chef, Ansible, Salt.
+
+Most of the Devops_engineers/users found Ansible as better one to use compared to all others. But why?
+
+-----------------------------------------------------------------------------
+   Puppet           |        Ansible
+-----------------------------------------------------------------------------
+1. Pull model       |   1. Push model
+2. master/slave     |   2. Agentless 
+    architecture    |       architecture
+                    |   3. Good supporting 
+                    |       for linux and descent for windows(not perfect).
+4. Uses puppet      |   4. simple(uses YAML language)
+   language         |
+-----------------------------------------------------------------------------
+
+
+Disadvantages with Ansible:
+   1. Not perfect with windows
+   2. Debugging the code is not supported properly
+   3. Performance is not good.
+
+
+
+Few interview questions of Ansible:
+
+1. Language ansible uses?  -> Python - We can write own modules in ansible using python.
+2. Does ansible supports linux and windows?  -> Yes - For linux, it uses SSH protocol to connect and for windows, it uses WinRM protocol.
+3. Difference between puppet and ansible? -> refer and understand the above table.
+4. Language ansible uses? -> YAML.
+5. Is ansible follows push or pull mechanism? -> Push mechanism.
