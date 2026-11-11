@@ -3,7 +3,7 @@
 1. EC2 -> Elastic Compute Cloud
        -> Live projects
 
-2. VPc -> Virtual Private Cloud
+2. VPC -> Virtual Private Cloud
        -> Private
        -> To secure AWS instances
 
